@@ -42,6 +42,7 @@ nmcli c down "$RPI_CONN_NAME"
 nmcli c m "$RPI_CONN_NAME" ipv4.method manual ipv4.address "$RPI_IP" ipv4.gateway "$RPI_GW" ipv4.dns "$RPI_DNS" > /tmp/nmclilog.txt
 systemctl restart NetworkManager
 nmcli c up "$RPI_CONN_NAME"
+systemctl enable --now sshd
 
 # Dump logs into /tmp/rc-local-log.txt
 echo -e " | CONNECTION STATUS |\n" >> /tmp/rc-local-log.txt
