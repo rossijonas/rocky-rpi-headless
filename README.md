@@ -1,4 +1,4 @@
-# RPi-RockyLinux-StaticIP
+# rocky-rpi-headless
 
 _Enable headless access to a fresh new Rocky Linux installation on a Raspberry Pi._
 
@@ -6,7 +6,7 @@ _Enable headless access to a fresh new Rocky Linux installation on a Raspberry P
 
 ### Why do I need that?
 
-To be able to access the device remotely (via 'ssh') since it's first boot.
+To be able to access the device remotely (via `ssh`) since it's first boot.
 
 Plug the network cable, the power cable and it's ready.
 
