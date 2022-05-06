@@ -65,7 +65,7 @@ If you started the device but could not access it via `ssh`, you can poweroff, r
 
 ## Credits:
 
-This was inspired and/or helped by:
+Inspired and/or helped by:
 
 - https://github.com/mesca/alpine_headless
 - [Skip Grube](https://git.rockylinux.org/skip)
