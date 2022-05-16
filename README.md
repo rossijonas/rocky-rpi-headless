@@ -6,27 +6,27 @@ _Enable headless access to a fresh new Rocky Linux installation on a Raspberry P
 
 ### Why do I need that?
 
-To be able to access the device remotely (via `ssh`) since it's first boot.
+To be able to access the device remotely (via `ssh`) since its first boot.
 
-Plug the network cable, the power cable and it's ready.
+Plug the network cable and the power cable and it's ready.
 
-No need to plug screen nor keyboard to the device in order to do the first access.
+No need to plug the screen or keyboard into the device to do the first access.
 
 ### How it is done? 
 
-The `rc.local` script runs after first boot assigning the manual static IP configuration and making sure `sshd` is running.
+The `rc.local` script runs after the first boot assigning the manual static IP configuration and making sure `sshd` is running.
 
 ## How to use:
 
-1. [Download and install Rocky Linux for Raspberry Pi](https://rockylinux.org/alternative-images) (_Raspberry Pi (aarch64)_) on an SD card, following it's original instructions.
+1. [Download and install Rocky Linux for Raspberry Pi](https://rockylinux.org/alternative-images) (_Raspberry Pi (aarch64)_) on an SD card, following its original instructions.
 
-2. With Rocky Linux installed in the SD card, acces the `rootfs` and edit the file `/etc/rc.d/rc.local` adding the following line:
+2. With Rocky Linux installed on the SD card, access the `rootfs` and edit the file `/etc/rc.d/rc.local` adding the following line:
 
 ```
 [[ -f "/home/rocky/rocky-rpi-headless.sh" ]] && /home/rocky/rocky-rpi-headless.sh
 ```
 
-3. Clone/Download this repo and copy the `rocky-rpi-headless.sh` scrip to `/home/rocky/` directory in the SD card's `rootfs`.
+3. Clone/Download this repo and copy the `rocky-rpi-headless.sh` script to `/home/rocky/` directory in the SD card's `rootfs`.
 
 4. Edit the `/home/rocky/rocky-rpi-headless.sh` script assigning the desired values for IP, GATEWAY, and DNS addresses. 
 
@@ -54,14 +54,16 @@ rm ~/rocky-rpi-headless.sh
 
 The script generates the file `/tmp/rc-local-log.txt` in the SD card's `rootfs` partition.
 
-This file has output generated after the script's configuration applied, showing:
+This file has output generated after the script's configuration is applied, showing:
 
 - Connection status
 - IP addresses of all network interfaces and connections
 - `sshd` status
 - `firewalld` allowed services
 
-If you started the device but could not access it via `ssh`, you can poweroff, remove the SD card, put ir back in your computer and inspect this file for quick insights.
+If you started the device but could not access it via `ssh`, you can power it off, remove the SD card, put it back on your computer, and inspect this file for quick insights.
+
+You may also check `/var/log/messages` in the `rootfs` partition for general logs.
 
 ## Credits:
 
