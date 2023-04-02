@@ -50,7 +50,7 @@ _(Make sure you execute the commands above in the root directory of SD card `roo
 ```
 sudo rm ~/rocky-rpi-headless.sh
 ```
-... and remove the line that executes this script in the `/etc.rc.d/rc.local` file.
+... and remove the line that executes this script in the `/etc/rc.d/rc.local` file.
 
 ## Debug
 
